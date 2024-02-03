@@ -4,7 +4,7 @@ import { Web3 } from 'web3';
 import React from 'react';
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
-import Register from './components/Register';
+import Register from './components/register';
 const App = () => {
   const [connectedAccount, setConnectedAccount] = useState('null');
     
@@ -31,7 +31,7 @@ const App = () => {
       <NavigationBar />
       <Routes>
         <Route path="/" element={"home"} />
-        <Route path="/register" element={<Register con={connectMetamask} acc={connectedAccount} />} />
+        <Route path="/register" element={<Register con={connectMetamask} acc={connectedAccount}  set={setConnectedAccount}/>} />
         <Route path="/login" element={"login"} />
         <Route path="/doctor" element={"docter"} />
         <Route path="/patient" element={"patien"} />
